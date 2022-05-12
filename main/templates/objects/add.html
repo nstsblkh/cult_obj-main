@@ -1,0 +1,22 @@
+{% extends "./base.html" %}
+
+{% block content %}
+	<main class="d-flex justify-content-center align-items-center h-100">
+		
+		<form class="d-flex justify-content-center" method="post"><break>
+			{% csrf_token %}
+            {% for item in form %}
+                <div class="form-group">
+    			<label class="mb-3" >{{ item.label }}</label><br>
+    			{{ item }}
+  			</div>
+            {% endfor %}
+  			<div class="d-flex justify-content-center">
+  				<button type="submit" class="btn btn-dark">Добавить</button>
+			</div>
+		</form>
+		
+	</main>
+{% endblock %}
+
+	

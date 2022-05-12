@@ -1,0 +1,10 @@
+{% extends "../objects/base.html" %}
+
+{% block content %}
+			<div class="d-flex flex-column justify-content-center align-items-center" style="height: 100vh;">
+				<p>Вы вышли из аккаунта!</p>
+
+				<a href="{% url 'login'%}" style="text-decoration: none">Нажмите, чтобы снова войти.</a>
+			</div>
+{% endblock %}
+

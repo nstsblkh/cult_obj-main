@@ -1,0 +1,54 @@
+{% extends "./base.html" %}
+{% load static %}
+
+{% block content %}
+   {% if user.is_authenticated %}
+  <section class="vh-stretch" style="background-color: #ffffff;">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col col-lg-6 mb-4 mb-lg-0">
+        <div class="card mb-3" style="border-radius: .5rem;">
+          <div class="row g-0">
+            <div class="col-md-4" style="border-top-left-radius: .5rem; border-bottom-left-radius: .5rem;">
+              <img class="im"
+                src="{% static 'img/1.png' %}"
+                alt="Avatar"
+                class="img-fluid my-5"/>
+              <i class="far fa-edit mb-5"></i>
+            </div>
+            <div class="col-md-8">
+              <div class="card-body p-4">
+                <h6>Информация</h6>
+                <hr class="mt-0 mb-4">
+                <div class="row pt-1">
+                  <div class="col-6 mb-3">
+                    <h6>Имя и Фамилия</h6>
+                    <p class="text-muted">{{user.get_full_name}}</p>
+                  </div>
+                  </div>
+                </div>
+                <h6>Имя пользователя</h6>
+                <hr class="mt-0 mb-4">
+                <div class="row pt-1">
+                  <div class="col-12 mb-3">
+                    <p class="text-muted">{{user.get_username}}</p>
+                  </div>
+                </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="d-flex justify-content-center">
+  <!-- <a href="{% url 'login' %}"><button type="submit" class=" mb-3 btn btn-dark ">Выйти</button></a></div>-->
+</section>
+  {% else %}
+  <div class="d-flex justify-content-center h-100">
+    <form  class="d-flex justify-content-center align-items-center" action="{% url 'index'%}" method="GET">
+	<button class=" btn btn-dark" type="submit" >На главную</button>
+    </form></div>
+</section>{% endif %}
+{% endblock %}
